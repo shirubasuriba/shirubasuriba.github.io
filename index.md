@@ -4,7 +4,7 @@
 
 layout: home
 ---
-<html>
+<!-- <html>
   <head>
     <meta charset="utf-8">
     <title>完璧になる必要はない</title>
@@ -20,9 +20,9 @@ layout: home
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
+  {%- if site.posts.size > 0 -%} -->
     <!--<h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
-    <ul class="post-list">
+   <!-- <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -81,4 +81,4 @@ layout: home
   </div>
 
 </footer>
-  </html>
+  </html> -->
