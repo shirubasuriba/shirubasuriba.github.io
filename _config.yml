@@ -25,7 +25,7 @@ github_username:  shirubasuriba
 
 # Build settings
 markdown: kramdown
-theme: try
+theme: shirubasuriba/try
 plugins:
   - jekyll-feed
 
