@@ -17,18 +17,23 @@ General Skills 大多都是A氏幫我解掉的
 所以這邊的write-up會多是Web Exploitation那方面的
 
 以下是窩解的題目
----
-##[Web] Inspect Me (Points: 125)
+
+***
+
+## [Web] Inspect Me (Points: 125)
+
 F12之後再去Network那裡看每一個file，再把下面comment的組起來
 GET FLAG
 
-##[Web] Client Side is Still Bad (Points: 150)
+## [Web] Client Side is Still Bad (Points: 150)
+
 view-source之後把verify()裡的東西組起來
 ![ClientSideisStillBad](/images/pico2018/ClientSideisStillBad150.JPG)
 GET FLAG
 
 
-##[Web] Logon (Points: 150)
+## [Web] Logon (Points: 150)
+
 在login裡什麼也不輸入的情況下Sign In，Login之後他會跟你說 No flag for you
 ![Logon2](/images/pico2018/Logon150_2.JPG)
 這時候用Edit the cookie之類的東西，把admin裡的false改成true，再F5
@@ -36,7 +41,8 @@ GET FLAG
 GET FLAG
 
 
-##[Web] Irish Name Repo (Points: 200)
+## [Web] Irish Name Repo (Points: 200)
+
 先不說他的解法好不好玩，但窩頗喜歡他的內容w
 
 由Support裡能得知 這題目是SQL injection
@@ -47,14 +53,16 @@ admin' --
 ![IrishNameRepo200_2](/images/pico2018/IrishNameRepo200_2.JPG)
 GET FLAG
 
-##[Web] Mr. Robots (Points: 200)
+## [Web] Mr. Robots (Points: 200)
+
 題目名稱已經是提示。進去網站之後在URL加上
 ```
 /robots.txt
 ```
 之後裡面的Disallow的html就是放著Flag
 
-##[Web] No Login (Points: 200)
+## [Web] No Login (Points: 200)
+
 這題是令窩很火的一題，窩還在decode那個cookie是什麼鬼東西，但原來是不用想太多。
 窩被這題玩了兩天，Sinon氏五分鐘也不用就把Flag找出來了_(:□ 」∠)_
 
@@ -62,10 +70,12 @@ GET FLAG
 把窩兩天還回來
 
 
-##[Web] Secret Agent (Points: 200)
+## [Web] Secret Agent (Points: 200)
+
 這個就是用chrome UA Spoofer來改成Googlebot User Agent後，再按FLAG就行了
 
-##[Web] Button (Points: 250)
+## [Web] Button (Points: 250)
+
 開Inspect，改HTML
 ```HTML
 <form action="button2.php" method="POST">
@@ -74,11 +84,13 @@ GET FLAG
 ```
 再按那個PUSH ME! 就有FLAG了
 
-##[Web] The Vault (Points: 250)
+## [Web] The Vault (Points: 250)
+
 對對，這題多加了filter。我和Sinon氏也很87地在Username試SQL injection
 但其實這裡沒有在password做filtering，直接在Password裡`1' or 1=1 --`之後就GET FLAG
 
-##[Web] Artisinal Handcrafted HTTP 3 (Points: 300)
+## [Web] Artisinal Handcrafted HTTP 3 (Points: 300)
+
 這題可以說是不錯的練習，做完會對Header更熟
 但要輸入的東西
 先nc過去那個再過了那個CAPTCHA
@@ -108,7 +120,8 @@ Cookie: xxxxxxx
 ```
 之後就會回FLAG了
 
-##[Web] Flaskcards (Points: 350)
+## [Web] Flaskcards (Points: 350)
+
 這題在題目就會知道Flask，可是我不會這東西w
 之後H氏跟我說了這是Template injection
 
@@ -116,7 +129,8 @@ Cookie: xxxxxxx
 然後去List Cards，就會看到一堆文字，找一下之會看到FLAG了
 ![flaskcards350_2](/images/pico2018/flaskcards350_2.JPG)
 
-##[Web] Help Me Reset 2 (Points: 600)
+## [Web] Help Me Reset 2 (Points: 600)
+
 窩有99.9%相信窩的解法不是正常的解法
 Inspect會看到 `<!--Proudly maintained by crandall-->`
 那個user每次也會不同。之後去Log In 的 Forgot your password?。 輸入了剛給的username之後要你回答安全問題的東西，好像錯了兩次就要reload重來。
@@ -131,5 +145,6 @@ The requested URL was not found on the server. If you entered the URL manually p
 嗯...沒見過的URL欸，進去看看吧！
 ![HelpMeReset2_600_2](/images/pico2018/HelpMeReset2_600_2.jpg)
 是FLAG啊！！！
+
 ---
 以上是我解掉的Web，其他就再等我有空吧
