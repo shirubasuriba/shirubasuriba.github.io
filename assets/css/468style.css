@@ -42,7 +42,7 @@ b, strong { font-weight: bold; }
 dfn { font-style: italic; }
 
 /** Address variable `h1` font-size and margin within `section` and `article` contexts in Firefox 4+, Safari, and Chrome. */
-h1 { font-size: 2em; margin: 0.67em 0; }
+h1 { font-size: 42px; margin: 0.67em 0; }
 
 /** Address styling not present in IE 8/9. */
 mark { background: #ff0; color: #000; }
@@ -258,7 +258,7 @@ td, th { padding: 0; }
 
 * { box-sizing: border-box; }
 
-body { padding: 0; margin: 0; font-family: "游ゴシック","YuGothic","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ Ｐゴシック",sans-serif; font-size: 16px; line-height: 1.5; color: #606c71; }
+body { padding: 0; margin: 0; font-family: "Source Code Pro" Consolas, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; font-size: 16px; line-height: 0.5; color: #606c71; }
 
 a { text-decoration: none; }
 a:hover {  text-decoration: none; }
@@ -276,7 +276,7 @@ a:hover {  text-decoration: none; }
 @media screen and (min-width: 42em) and (max-width: 64em) { .page-header { padding: 3rem 4rem; } }
 @media screen and (max-width: 42em) { .page-header { padding: 2rem 1rem; } }
 
-.project-name { color: #FFFFFF; margin-top: 0; margin-bottom: 0.1rem; }
+.project-name { font-size: 42px; color: #FFFFFF; margin-top: 0; margin-bottom: 0.1rem; }
 @media screen and (min-width: 64em) { .project-name { font-size: 3.25rem; } }
 @media screen and (min-width: 42em) and (max-width: 64em) { .project-name { font-size: 2.25rem; } }
 @media screen and (max-width: 42em) { .project-name { font-size: 1.75rem; } }
