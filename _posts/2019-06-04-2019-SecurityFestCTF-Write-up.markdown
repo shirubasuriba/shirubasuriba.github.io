@@ -39,7 +39,7 @@ gef> pattern offset 0x6161616161616164
 ```bash
 objdump -d baby1 | grep "system"
 ```
-![objdumpSystem](/images/SecurityFest2019/objdump_System.png)
+![objdumpSystem](/images/SecurityFest2019/objdump_system.png)
 
 再用ROPgadget把/bin/sh的address找出來
 ```bash
