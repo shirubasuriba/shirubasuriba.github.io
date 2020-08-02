@@ -11,9 +11,7 @@ categories: CTF
 
 ***
 
-#Web
-
-##Ladybug
+## [Web] Ladybug
 
 打開了題目給的link，用wappalyzer看到是用Flask
 
@@ -27,7 +25,7 @@ categories: CTF
 ```
 ![Ladybug](/images/Hacktivitycon-CTF/flag.PNG)
 
-##Bite
+## [Web] Bite
 
 很令人懷念的null byte attack
 
@@ -38,7 +36,7 @@ categories: CTF
 
 ![bite](/images/Hacktivitycon-CTF/bite.PNG)
 
-##GI Joe
+## [Web] GI Joe
 
 這個聽說也是很舊的東西，CVE也好像是2012年的東西
 
@@ -50,7 +48,7 @@ categories: CTF
 
 ![GIJoe](/images/Hacktivitycon-CTF/GIJoe.PNG)
 
-##Waffle Land
+## [Web] Waffle Land
 
 在search那邊發現到SQL injection，
 
@@ -60,13 +58,8 @@ categories: CTF
 
 然後就能拿到admin的password```admin:NT7b#ed4$J?eZ#m_```，再去Login就有flag了
 
-##Lightweight Contact Book
+## [Web] Lightweight Contact Book
 
-#Binarty Exploitation
+## [pwn]Pancakes
 
-##Pancakes
-
-
-#Scripting
-
-##Misdirection
+## [Scripting]Misdirection

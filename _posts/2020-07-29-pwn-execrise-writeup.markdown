@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  pwn Exercise Writeup
-date:   2020-07-029 10:11:34 -0400
+date:   2020-07-29 10:11:34 +0800
 categories: CTF
 ---
 わたしはできそこないの人です。周りの人がWebをやるから、わたしはpwnに逃げたが、知識ゼロです。
