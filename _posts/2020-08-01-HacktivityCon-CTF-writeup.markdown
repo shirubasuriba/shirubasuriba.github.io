@@ -87,7 +87,7 @@ while(end == False):
 
 password是`very_secure_hacktivity_pass`寫了在description裡 登入之後就會給flag
 
-![light](/images/Hacktivitycon-CTF/light.PNG)
+![light](/images/Hacktivitycon-CTF/Light.PNG)
 
 ## [pwn]Pancakes
 
