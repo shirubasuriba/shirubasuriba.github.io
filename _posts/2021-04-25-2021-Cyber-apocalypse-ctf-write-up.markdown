@@ -200,5 +200,23 @@ uint key_generator(void)
 
 ## [Forensics] Low Energy Crypto
 這題後半也是Mystizさん在解，因為我真的不會Crypto。  
-這題結構是把public key跟cipher都隱藏BLE的communication裡，所以就是要在大海找public key跟cipher
+這題結構是把public key跟cipher都隱藏BLE的communication裡，所以就是要在大海找public key跟ciphertext  
+要在BLE的packet中找東西，先用`btatt`把會有data傳送的ATT filter出來  
+![images](/images/HTBCTF2021/Screenshot 2021-04-27 101004.png)
+看看那些packet時看到有`BEGIN PUBLIC KEY`的東西
+![images](/images/HTBCTF2021/Screenshot 2021-04-27 101358.png)
+再把上下的packet的data都拿出來。(不知為什麼我總是copy錯內容給Mystizさん，最後他brute force正確的key出來w) 
+```
+-----BEGIN PUBLIC KEY-----
+MGowDQYJKoZIhvcNAQEBBQADWQAwVgJBAKKPHxnmkWVC4fje7KMbWZf07zR10D0m
+B9fjj4tlGekPOW+f8JGzgYJRWboekcnZfiQrLRhA3REn1lUKkRAnUqAkCEQDL/3Li
+4l+RI2g0FqJvf3ff
+-----END PUBLIC KEY-----
+```
+還有ciphertext
+![images](/images/HTBCTF2021/Screenshot 2021-04-27 103221.png)
+之後就是TWTさん和Mystizさん在解了。  
+TWTさん說法: 用 public key factorize 之後解 cipher text  
+Mystizさん: 不知怎由 public key 拿到 private key -> 解密 -> ?? -> get flag  
+之前都是一個人玩CTF，多人起就是這樣吧w  
 
